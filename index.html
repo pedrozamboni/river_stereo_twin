@@ -22,66 +22,54 @@
     </header>
 
     <nav>
-        <a href="#abstract">Abstract</a>
+        <a href="#about">About</a>
         <a href="#methodology">Methodology</a>
         <a href="#results">Results</a>
-        <a href="#applications">Applications</a>
-        <a href="#code">Code</a>
+        <a href="#info">Event Info</a>
         <a href="https://doi.org/10.5194/egusphere-egu25-9375">Paper</a>
     </nav>
 
     <main>
-        <section id="abstract">
-            <h2>Abstract</h2>
-            <p>Water level information is essential for monitoring and modelling river systems. Traditional water level monitoring is done using intrusive gauging methods, such as pressure gauges; however, these sensors might be lost during an intense flood. Furthermore, in extreme flood or drought events, measurements may become insufficient.</p>
+        <section id="about">
+            <h2>About</h2>
+            <p>Traditional water level monitoring relies on intrusive gauging methods like pressure gauges, which are vulnerable to loss during intense floods. Camera gauges have emerged as a promising alternative, offering remote sensing capabilities and safer installation options. However, common single-camera setups require additional information such as 3D models and ground control points.</p>
             
-            <p>Camera gauges have gained attention over recent years as a low-cost and remote sensing approach for river monitoring. They provide a more flexible and convenient setup, with cameras installed in a safe location. Moreover, they can efficiently monitor a wide range of water level values and can be used to estimate water surface velocity for river discharge measurement.</p>
-            
-            <p>In this study, we propose to change the camera gauge paradigm by using two cameras and applying stereo-photogrammetry. Using this approach, points from two images can be projected into a 3D space without the need for a 3D model. The only required additional information besides the interior camera geometry is the distance between the two cameras (baseline).</p>
+            <p>This research introduces a novel approach using stereo-photogrammetry with two cameras. This setup eliminates the need for pre-existing 3D models, requiring only the distance between cameras (baseline) and interior camera geometry. The method enables direct 3D reconstruction of river cross-sections and water levels, supporting both traditional photogrammetric techniques and modern deep learning approaches.</p>
         </section>
 
         <section id="methodology">
             <h2>Methodology</h2>
             <div class="image-container">
                 <img src="images/Slide5.PNG" alt="Classical Stereo Processing Pipeline">
-                <p class="caption">Classical stereo processing pipeline for water level measurement</p>
+                <p class="caption">Classical stereo processing pipeline showing the key steps in stereo reconstruction</p>
             </div>
             <div class="image-container">
                 <img src="images/Slide9.PNG" alt="Deep Learning Stereo Processing">
-                <p class="caption">Deep learning approach for improved stereo reconstruction</p>
+                <p class="caption">Deep learning approach utilizing neural networks for improved feature matching</p>
             </div>
-            <p>Our methodology combines both classical and deep learning approaches for stereo reconstruction. The classical approach uses standard matching algorithms (SIFT, SURF) for keypoint matching between images. The deep learning approach employs neural networks for feature matching, achieving more robust results in challenging conditions with low texture or difficult lighting.</p>
         </section>
 
         <section id="results">
-            <h2>Results</h2>
+            <h2>Results & Applications</h2>
             <div class="image-container">
                 <img src="images/Slide10.PNG" alt="Z-coordinate Comparison">
-                <p class="caption">Comparison of Z-coordinates between models and reference points</p>
+                <p class="caption">Validation: Z-coordinate comparison between models and reference points</p>
             </div>
-            <p>The results demonstrate the effectiveness of our stereo photogrammetry approach in accurately measuring water levels. The comparison between traditional and deep learning methods shows improved robustness in challenging conditions while maintaining high accuracy.</p>
-        </section>
-
-        <section id="applications">
-            <h2>Applications</h2>
             <div class="image-container">
                 <img src="images/Slide14.PNG" alt="Water Level and Discharge Measurement">
-                <p class="caption">Application in water level and discharge measurement</p>
+                <p class="caption">Practical application: Water level and discharge measurement system</p>
             </div>
-            <p>Our stereo camera setup provides a robust solution for long-term camera gauge deployment, lowering system deployment costs and maintenance efforts. This approach allows for flexible densification of hydrological monitoring networks while providing accurate water level and discharge measurements.</p>
         </section>
 
-        <section id="code">
-            <h2>Code</h2>
-            <p>The repository contains our implementation of:</p>
-            <ul>
-                <li>Classical stereo processing pipeline</li>
-                <li>Deep learning-based feature matching</li>
-                <li>Water level extraction algorithms</li>
-                <li>Discharge calculation tools</li>
-            </ul>
-            <div class="buttons">
-                <a href="https://github.com/pedrozamboni/river_stereo_twin" class="button">View on GitHub</a>
+        <section id="info">
+            <h2>Event Information</h2>
+            <div class="event-details">
+                <p><strong>Event:</strong> EGU General Assembly 2025</p>
+                <p><strong>Location:</strong> Vienna, Austria</p>
+                <p><strong>Date:</strong> 27 Apr–2 May 2025</p>
+                <p><strong>Session:</strong> <a href="https://meetingorganizer.copernicus.org/EGU25/session/53961">HS1.2.1</a></p>
+                <p><strong>Abstract:</strong> EGU25-9375</p>
+                <p><strong>DOI:</strong> <a href="https://doi.org/10.5194/egusphere-egu25-9375">10.5194/egusphere-egu25-9375</a></p>
             </div>
         </section>
     </main>
@@ -104,10 +92,27 @@
         font-size: 0.9rem;
         color: var(--secondary-color);
     }
+
+    .event-details {
+        background-color: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent-color);
+    }
+
+    .event-details p {
+        margin: 0.5rem 0;
+    }
+
+    .event-details strong {
+        color: var(--primary-color);
+        margin-right: 0.5rem;
+    }
     </style>
 
     <footer>
-        <p>© 2025 The Author(s). EGU General Assembly 2025</p>
+        <p>© 2025 Author(s). This work is distributed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a></p>
+        <p>EGU General Assembly 2025</p>
         <p>DOI: <a href="https://doi.org/10.5194/egusphere-egu25-9375">10.5194/egusphere-egu25-9375</a></p>
     </footer>
 </body>
