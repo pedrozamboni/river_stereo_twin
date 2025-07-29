@@ -1,52 +1,9 @@
-# Water Ponding Analysis with Deep Learning
+# Stereo photogrammetry for river water level and cross-section update: classical and deep learning approaches
+Water level information is essential for monitoring and modelling river systems. Traditional, water level monitoring is done using intrusive gauging methods, such as pressure gauges; however, these sensors might be lost during an intense flood. Furthermore, in extreme flood or droughts events, measurements may become insufficient. Camera gauges have gained attention over recent years. These techniques emerge to be a low-cost and remote sensing approach for river monitoring. Camera gauges provide a more flexible and convenient setup, with cameras installed in a safe location. Moreover, they can efficiently monitor a wide range of water level values. Additionally, image sequences can be used to estimate water surface velocity and to eventually measure river discharge. Common camera gauge setups use one camera requiring additional information, e.g., a 3D model of river reach and ground control points (GCPs). On this setup, the water area is extracted from the images, and the water surface contour is reprojected into the 3D model, with the reprojection process being supported by GCPs. However, capturing 3D models can be challenging and is sometimes not possible. Further, due to cross-section change over time, there is a need to update the 3D model to ensure precise measurement. Here, we propose to change the camera gauge paradigm by using two cameras and applying stereo-photogrammetry. Using a traditional stereo-photogrammetry approach, points from two images can be projected into a 3D space, without the need for a 3D model. In this setup, the only required additional information besides the interior camera geometry is the distance between the two cameras, e.g., the baseline. After retrieving the relative camera positions, images can be densely matched to produce high resolution point clouds of the river cross-section.
 
-This repository contains the implementation and data for our paper "Measuring water ponding time, location and connectivity on soil surfaces using time-lapse images and deep learning" published in CATENA.
+For stereo-reconstruction, one of the first steps is the matching of key points between the images. Matched points are used to retrieve the relative camera poses (position and orientation). The matching can be done using standard matching algorithms (e.g., SIFT, and SURF). However, these can fail in cases where images have low texture or when they are captured in challenging light conditions. Deep learning has gained attention as an alternative to improving stereo processing. Neural networks for the feature matching achieved state-of-the-art results, being more robust in challenging conditions. Attempts to fully replace the traditional stereo reconstruction have been made (e.g., DUSt3R and MASt3R). These approaches can be used in stereo reconstruction without any prior information; however, they were not yet evaluated for camera gauge applications.
 
-## About
+The overall goal of our research is to produce an easy and robust stereo camera gauge setup that to flexibly estimate a 3D model of river cross-sections. Thereby, we can deliver a more robust long-term camera gauge, lowering system deployment costs and maintenance efforts, allowing for a flexible densification of the hydrological monitoring network.
 
-This repository includes:
-- Implementation of deep learning models for water ponding analysis
-- Dataset of time-lapse images and annotations
-- Project webpage
-- Supplementary materials
+How to cite: Zamboni, P. A. P., Krüger, R., and Eltner, A.: Stereo photogrammetry for river water level and cross-section update: classical and deep learning approaches, EGU General Assembly 2025, Vienna, Austria, 27 Apr–2 May 2025, EGU25-9375, https://doi.org/10.5194/egusphere-egu25-9375, 2025.
 
-Our work demonstrates how Convolutional Neural Networks can be used for direct spatial-temporal mapping of water ponds, addressing key challenges in measuring and understanding soil infiltration processes.
-
-## Repository Structure
-
-```
-pond_paper/
-├── code/           # Source code for models and analysis
-├── data/           # Dataset and trained models
-└── index.html      # Project webpage
-```
-
-## Paper Information
-
-- **Title**: Measuring water ponding time, location and connectivity on soil surfaces using time-lapse images and deep learning
-- **Journal**: CATENA
-- **Volume**: 254
-- **Publication Date**: 30 June 2025
-- **DOI**: [10.1016/j.catena.2025.108919](https://doi.org/10.1016/j.catena.2025.108919)
-
-## Dataset
-
-The dataset includes:
-- High-resolution time-lapse images of soil plots
-- Ground-truth annotations for water ponding areas
-- Runoff measurements and soil moisture data
-- Trained model weights and configurations
-
-## Running the Code
-
-Instructions for setting up the environment and running the code will be provided in the `code/` directory.
-
-## Project Page
-
-To view the project page locally:
-1. Clone this repository
-2. Open `index.html` in your browser
-
-## License
-
-© 2025 The Author(s). Published by Elsevier B.V.
